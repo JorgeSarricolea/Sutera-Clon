@@ -494,3 +494,81 @@ select {
 .phone-selection:focus-within {
     border-color: #8cd895;
 }
+/* Testimonials */
+
+#testimonials h2 {
+    text-align: center;
+}
+
+#testimonials p {
+    font-size: 14px;
+}
+
+.info-user {
+    display: flex;
+    flex-direction: row;
+}
+
+.picture-group {
+    padding: 20px;
+    display: flex;
+    width: fit-content;
+    margin: 0;
+}
+
+.profile-pic {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #031c3c;
+    padding: 10px;
+}
+
+.profile-pic p {
+    text-align: center;
+    color: #fff;
+    margin: 5px auto;
+}
+
+.profile-pic::before {
+    content: "\f058";
+    font-family: "FontAwesome";
+    font-size: 20px;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background-color: #fff;
+    color: #1cc286;
+    padding: 2px;
+    border-radius: 50%;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 5px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+}
+
+.stars i {
+    color: #fec600;
+}
+
+.text {
+    padding: 0 10px;
+}
+
+.text .date {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.text .coment {
+    margin-top: 10px;
+}
