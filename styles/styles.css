@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    font-family: 'ExtraLight 200', sans-serif;
+    color: #000;
+}
+
+/* Navbar
+----------------- */
+
+.main-navbar {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    height: 100px;
+    align-items: center;
+}
+
+.logotype {
+    display: flex;
+    align-items: center;
+    height: 70%;
+    background-color: transparent;
+}
+
+.logotype img {
+    height: 80%;
+    background-color: transparent;
+}
+
+.right-imgs {
+    display: flex;
+    height: 80%;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+.contact, .SSL {
+    height: 80%;
+    background-color: transparent;
+}
+
+.SSL {
+    margin-right: 100px;
+    align-items: center;
+}
+
+.mxflag {
+    height: 50%;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Index Section
+----------------- */
+
+#index-section {
+    border-style: dashed;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+}
+
+/* Carousel
+----------------- */
+
+#carousel {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+#carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#carousel img:first-child {
+    display: block;
+}
+
+.prev {
+    z-index: 100000;
+    color: red;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+#thumbnail-container {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    height: 90px;
+    object-fit: cover;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.thumbnail.selected {
+    height: 100px;
+}
