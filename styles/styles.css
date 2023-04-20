@@ -66,6 +66,10 @@
 ----------------- */
 
 #index-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
     border-style: dashed;
     margin: 20px auto;
     padding: 20px;
@@ -136,4 +140,43 @@ button {
 
 .thumbnail.selected {
     height: 100px;
+}
+
+/* Text Container
+----------------- */
+
+.text-container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+    width: 50%;
+}
+
+.list-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.icon-list {
+    display: flex;
+    align-items: center;
+}
+
+.text-container li {
+    text-align: left;
+    list-style: none;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.text-container i {
+    transform: rotate(270deg);
+    color: green;
+    font-size: 30px;
+    background-color: transparent;
 }
