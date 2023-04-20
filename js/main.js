@@ -88,3 +88,23 @@ optionsPayment.forEach(function(optionPayment) {
         this.classList.add('selected');
     });
 });
+
+// Dropdown countries REST API
+
+let link = 'https://restcountries.com/v3.1/all';
+
+fetch(link)
+    .then(response => response.json())
+    .then(countries => {
+        let select = document.getElementById('country_code');
+        for (let country of countries) {
+            let option = document.createElement('option');
+            let lada = country.idd.root + country.idd.suffixes;
+            option.value = lada;
+            option.text = `${country.name.common} (${lada})`;
+            select.add(option);
+        }
+    })
+    .catch(error => console.error(error));
+
+
