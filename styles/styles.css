@@ -2,9 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f5f5f5;
     font-family: 'ExtraLight 200', sans-serif;
     color: #000;
+}
+
+body {
+    background-color: #f5f5f5;
 }
 
 /* Navbar
@@ -70,6 +73,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 100px;
+    background-color: #ffffff;
     border-style: dashed;
     margin: 20px auto;
     padding: 20px;
@@ -97,11 +101,6 @@
 
 #carousel img:first-child {
     display: block;
-}
-
-.prev {
-    z-index: 100000;
-    color: red;
 }
 
 button {
@@ -180,3 +179,136 @@ button {
     font-size: 30px;
     background-color: transparent;
 }
+
+/* Step 1 Section
+----------------- */
+
+#step-1 {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 80%;
+}
+
+#step-1 .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    width: 50%;
+}
+
+/* Header */
+
+#step-1 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#step-1 .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+
+#step-1 .info h2 {
+    color: #c91f3f;
+}
+
+/* Rotating Effect Discount */
+
+@keyframes rotating-border {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#step-1 .discount {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: #c91f3f;
+    border-radius: 100px;
+    padding: 20px;
+    align-items: center;
+    position: relative;
+}
+
+#step-1 .discount::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    padding: 0;
+    width: 80%;
+    height: 80%;
+    border-radius: 100px;
+    border: 3px dashed white;
+    animation: rotating-border 10s linear infinite;
+}
+
+#step-1 .discount h1 {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.main-container h2 {
+    font-size: 18px;
+}
+
+.separator {
+    height: 1px;
+    background-color: #ccc;
+}
+
+/* Prices Form */
+
+.prices-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.option-price .description {
+    width: 50%;
+}
+
+.prices-container .option-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: end;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.option-price .fa-circle-check {
+    display: none;
+}
+
+.option-price.selected .fa-circle {
+    display: none;
+}
+
+.option-price.selected .fa-circle-check {
+    display: block;
+}
+
+.prices-container .option-price .description {
+    text-align: left;
+}
+
+
