@@ -160,7 +160,7 @@
 
                     <!-- Prices Form -->
 
-                    <div class="payment-method">
+                    <div class="payment-method" method="POST">
                         <div id="paypal" class="option-payment">
                             <i class="fa-regular fa-circle"></i>
                             <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -185,31 +185,46 @@
 
             <!-- Step 3 Section -->
 
-            <section id="step-2">
+            <section id="step-3">
                 <div class="main-container">
                     <div class="header">
                         <h2><strong>STEP 3: CONTACT INFORMATION</strong></h2>
                         <div class="separator"></div>
                     </div>
 
-                <!-- Register Form -->
+                    <!-- Register Form -->
 
-                    <form>
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required>
+                    <form id="user-register" method="POST">
+                        <div class="names">
+                            <input type="text" id="name" name="name" required placeholder="Name">
+                            <input type="text" id="last_name" name="last_name" required placeholder="Last name">
+                        </div>
 
-                        <label for="last_name">Apellido:</label>
-                        <input type="text" id="last_name" name="last_name" required>
+                        <input type="email" id="email" name="email" required placeholder="Email">
 
-                        <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="phone">Teléfono:</label>
-                        <select id="country_code" name="country_code">
-                            <div class="option"></div>
-                        </select>
-                        <input type="tel" id="phone" name="phone" required>
+                        <div class="phone-selection">
+                            <select id="country_code" name="country_code">
+                            </select>
+                            <input type="tel" id="phone" name="phone" required placeholder="Telephone">
+                        </div>
                     </form>
+                    <div class="separator"></div>
+
+                    <!-- Register Form -->
+
+                    <div id="testimonials">
+                        <div class="header">
+                            <h2><strong>What Customers say about Sutera™:
+                            </strong></h2>
+                            <div class="separator"></div>
+                        </div>
+                        <div class="info-user">
+                            <div class="profile-pic"></div>
+                            <div class="details">
+                                <p><strong>Jhon D.</strong> Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

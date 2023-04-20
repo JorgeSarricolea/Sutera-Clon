@@ -101,7 +101,7 @@ fetch(link)
             let option = document.createElement('option');
             let lada = country.idd.root + country.idd.suffixes;
             option.value = lada;
-            option.text = `${country.name.common} (${lada})`;
+            option.text = `${lada}`;
             select.add(option);
         }
     })

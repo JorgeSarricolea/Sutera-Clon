@@ -403,3 +403,94 @@ button {
     margin-left: 20px;
 }
 
+/* Step 3 Section
+----------------- */
+
+#step-3 {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 100%;
+}
+
+#step-3 .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#step-3 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Register User Form */
+
+#user-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+#user-register input {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+}
+
+.names {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.phone-selection {
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f5f5;
+    padding: 0 10px;
+    border-radius: 10px;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+#country_code {
+    background-color: #fff;
+    width: 22%;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: transparent;
+}
+
+input:focus {
+    outline: 2px solid #8cd895;
+}
+
+input[type="tel"]:focus {
+    outline: none;
+}
+
+select option {
+    background-color: red;
+}
+
+select {
+    width: 60px;
+}
+
+.phone-selection:focus-within {
+    border-color: #8cd895;
+}
