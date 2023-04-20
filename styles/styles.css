@@ -180,6 +180,17 @@ button {
     background-color: transparent;
 }
 
+/* Steps Containers
+----------------- */
+.main-steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    gap: 20px;
+}
+
 /* Step 1 Section
 ----------------- */
 
@@ -187,7 +198,7 @@ button {
     display: flex;
     flex-direction: column;
     margin: 20px auto;
-    width: 80%;
+    width: 100%;
 }
 
 #step-1 .main-container {
@@ -198,7 +209,7 @@ button {
     padding: 20px;
     background-color: #ffffff;
     border: 1px solid #ccc;
-    width: 50%;
+    border-radius: 5px;
 }
 
 /* Header */
@@ -311,4 +322,80 @@ button {
     text-align: left;
 }
 
+/* Step 2 Section
+----------------- */
+
+#step-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 100%;
+}
+
+#step-2 .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#step-2 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Prices Form */
+
+.payment-method {
+    display: flex;
+    flex-direction: column;
+}
+
+#paypal img {
+    height: 60%;
+    margin-left: 20px;
+}
+
+#credit-cards  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-side {
+    display: flex;
+}
+
+#credit-cards img {
+    width: 40%;
+}
+
+.payment-method .option-payment {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option-payment .fa-circle-check {
+    display: none;
+}
+
+.option-payment.selected .fa-circle {
+    display: none;
+}
+
+.option-payment.selected .fa-circle-check {
+    display: block;
+}
+
+.payment-method .option-payment .description {
+    text-align: left;
+    margin-left: 20px;
+}
 

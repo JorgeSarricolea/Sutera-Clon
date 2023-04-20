@@ -53,8 +53,7 @@ for (const thumbnail of thumbnails) {
     thumbnail.addEventListener('click', selectImageByThumbnail);
 }
 
-// Functions for radio form
-
+// Functions for radio form (Prices)
 var options = document.querySelectorAll('.prices-container .option-price');
 
 // Select default option
@@ -65,6 +64,24 @@ options.forEach(function(option) {
     option.addEventListener('click', function() {
         // Remove selected class
         options.forEach(function(o) {
+        o.classList.remove('selected');
+        });
+        // Add selected class
+        this.classList.add('selected');
+    });
+});
+
+// Functions for radio form (Prices)
+var optionsPayment = document.querySelectorAll('.payment-method .option-payment');
+
+// Select default option
+optionsPayment[0].classList.add('selected');
+
+// Add event click forEach
+optionsPayment.forEach(function(optionPayment) {
+    optionPayment.addEventListener('click', function() {
+        // Remove selected class
+        optionsPayment.forEach(function(o) {
         o.classList.remove('selected');
         });
         // Add selected class
