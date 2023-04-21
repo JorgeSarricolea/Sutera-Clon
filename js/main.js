@@ -1,5 +1,3 @@
-
-
 // Functions for carousel images
 const carousel = document.getElementById('carousel');
 const images = carousel.getElementsByTagName('img');
@@ -55,11 +53,20 @@ for (const thumbnail of thumbnails) {
     thumbnail.addEventListener('click', selectImageByThumbnail);
 }
 
+
+
 // Functions for radio form (Prices)
-var options = document.querySelectorAll('.prices-container .option-price');
+const options = document.querySelectorAll('.prices-container .option-price');
 
 // Select default option
 options[2].classList.add('selected');
+
+// Prices forEach
+let price1 = 49.97;
+let price2 = 46.97*2;
+let price3 = 44.97*3;
+let price4 = 42.97*4;
+let price5 = 39.97*5;
 
 // Add event click forEach
 options.forEach(function (option) {
@@ -70,10 +77,57 @@ options.forEach(function (option) {
         });
         // Add selected class
         this.classList.add('selected');
+
+        // Calculate final price
+        let selectedPrice = 0;
+        let protection = 19.97;
+        let priceProtection = 0;
+        let shipping = 0;
+        let price = 0;
+        let detail;
+        if (this.id === 'price-1') {
+            selectedPrice = price1 + 9.45;
+            detail = '50% OFF: 1 Sutera™ Pillow';
+            priceProtection = selectedPrice + protection;
+            shipping = '$' + 9.45;
+        } else if (this.id === 'price-2') {
+            selectedPrice = price2;
+            detail = '53% OFF: 2 Sutera™ Pillows';
+            priceProtection = price2 + protection;
+            shipping = 'FREE';
+        } else if (this.id === 'price-3') {
+            selectedPrice = price3;
+            detail = '55% OFF: 3 Sutera™ Pillows';
+            priceProtection = price3 + protection;
+            shipping = 'FREE';
+        } else if (this.id === 'price-4') {
+            selectedPrice = price4;
+            detail = '57% OFF: 4 Sutera™ Pillows';
+            priceProtection = price4 + protection;
+            shipping = 'FREE';
+        } else if (this.id === 'price-5') {
+            selectedPrice = price5;
+            detail = '60% OFF: 5 Sutera™ Pillows';
+            priceProtection = price5 + protection;
+            shipping = 'FREE';
+        }
+
+        // Update final price element
+        let finalPrice = document.querySelector('#final-price h2');
+        let detailsSelected = document.querySelector('#details h3');
+        let priceDetail = document.querySelector('#price-detail h3')
+        let protectionSelect = document.querySelector('#price-protection h2');
+        let shippingPrice = document.querySelector('#shipping-cost h2')
+
+        finalPrice.textContent = '$' + selectedPrice.toFixed(2);
+        detailsSelected.textContent = detail;
+        priceDetail.textContent = selectedPrice;
+        protectionSelect.textContent = '$' + priceProtection.toFixed(2);
+        shippingPrice.textContent = shipping;
     });
 });
 
-// Functions for radio form (Prices)
+// Functions for radio form (Payment Method)
 let optionsPayment = document.querySelectorAll('.payment-method .option-payment');
 let creditCard_section = document.getElementById('step-4');
 
@@ -98,6 +152,35 @@ optionsPayment.forEach(function (optionPayment) {
             //Change the tittle Step of the last one (Step 4 to Step 6)
             let newTittle = document.querySelector('#step-6 h2');
             newTittle.textContent = 'STEP 6: ORDER SUMMARY';
+
+            // shipping-address Form
+
+            const shippingAddress_Form = document.getElementById('shipping-address');
+
+            submitBtn.addEventListener('click', function (event) {
+            event.preventDefault(); // to prevent the form from submitting
+
+                const streetAddressInput = document.getElementById('street-address');
+                const apartmentSuiteInput = document.getElementById('apartment-suite');
+                const countryInput = document.getElementById('country');
+                const stateInput = document.getElementById('state');
+                const zipCodeInput = document.getElementById('zip-code');
+                const creditCardNumberInput = document.getElementById('credit-card-number');
+                const securityCodeInput = document.getElementById('security-code');
+                const cardMonthInput = document.getElementById('card-month');
+                const cardYearInput = document.getElementById('card-year');
+
+
+                // Check if required fields have a value
+                if (!streetAddressInput.value || !apartmentSuiteInput.value || !countryInput.value || !stateInput.value ||
+                    !zipCodeInput.value || !creditCardNumberInput.value || !securityCodeInput.value || !cardMonthInput.value || 
+                    !cardYearInput.value) {
+                    console.log('Inputs vacios (Credit card)');
+                } else {
+                    console.log('All required input fields have values');
+                    shippingAddress_Form.submit(); // submit the form
+                }
+            });
         } else {
             creditCard_section.classList.remove('section-selected');
         }
@@ -208,6 +291,30 @@ optionsBilling.forEach(function (option) {
         if (this.id === 'new-address') {
             // Show billing address form
             newAddress.classList.add('section-selected');
+
+            // billing-form Form
+            const newBilling_Form = document.getElementById('billing-form');
+
+            submitBtn.addEventListener('click', function (event) {
+            event.preventDefault(); // to prevent the form from submitting
+
+                const nameInput = document.getElementById('name');
+                const lastNameInput = document.getElementById('last_name');
+                const streetAddressInput = document.getElementById('street-address');
+                const apartmentSuiteInput = document.getElementById('apartment-suite');
+                const countryInput = document.getElementById('country-billing');
+                const stateInput = document.getElementById('state-billing');
+                const zipCodeInput = document.getElementById('zip-code');
+
+                // Check if required fields have a value
+                if (!nameInput.value || !lastNameInput.value || !streetAddressInput.value ||
+                    !countryInput.value || !stateInput.value || !zipCodeInput.value) {
+                    console.log('inputs vacios (New billing)');
+                } else {
+                    console.log('All required input fields have values');
+                    newBilling_Form.submit(); // submit the form
+                }
+            });
         } else {
             newAddress.classList.remove('section-selected');
         }
@@ -238,12 +345,8 @@ for (let i = 0; i < statesMX.length; i++) {
     selectState.add(option);
 }
 
-
 // Functions for radio check Protection
-let optionProtection = document.querySelectorAll('.protecion-options .option-protection');
-
-// Select default option
-optionProtection[0].classList.add('selected');
+const optionProtection = document.querySelectorAll('.protecion-options .option-protection');
 
 // Add event click forEach
 optionProtection.forEach(function (option) {
@@ -256,9 +359,65 @@ optionProtection.forEach(function (option) {
             o.classList.remove('selected');
         });
 
-        // Add selected class and checkmark to clicked option if it was not already selected
+        const totalProtection = document.querySelector('.total-protection');
+        const normalPrice = document.querySelector('.total-tax');
+        const warranty = document.querySelector('.warranty-text');
+        const shipping = document.querySelector('shipping-text');
+
         if (!isSelected) {
             this.classList.add('selected');
+            totalProtection.style.display = 'flex';
+            warranty.style.display = 'flex';
+            normalPrice.style.display = 'none';
+        } else {
+            totalProtection.style.display = 'none';
+            warranty.style.display = 'none';
+            normalPrice.style.display = 'flex';
         }
     });
 });
+
+// Functions for radio check Privacy
+const optionPrivacy = document.querySelectorAll('.privacy-options .option-privacy');
+
+// Add event click forEach
+optionPrivacy.forEach(function (option) {
+    option.addEventListener('click', function () {
+        // Check if clicked option is already selected
+        const isSelected = this.classList.contains('selected');
+
+        // Remove selected class from all options
+        optionPrivacy.forEach(function (o) {
+            o.classList.remove('selected');
+        });
+
+        if (!isSelected) {
+            this.classList.add('selected');
+
+        }
+    });
+});
+
+// Submit Functions and check inputs fields
+
+const submitBtn = document.getElementById('submit-btn');
+// user-register From
+const userRegister_Form = document.getElementById('user-register');
+
+submitBtn.addEventListener('click', function (event) {
+  event.preventDefault(); // to prevent the form from submitting
+
+    const nameInput = document.getElementById('name');
+    const lastNameInput = document.getElementById('last_name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+
+    if (!nameInput.value || !lastNameInput.value || !emailInput.value || !phoneInput.value) {
+        console.log('Inputs vacios (user register)');
+    } else {
+        console.log('All input fields have values');
+        userRegister_Form.submit(); // submit the form
+    }
+});
+
+

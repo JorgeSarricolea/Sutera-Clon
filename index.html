@@ -10,6 +10,8 @@
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="styles/styles.css">
 
+    <!-- Favicon -->
+    <link href="assets/img/favicon.png" rel="icon">
 </head>
 
 <body>
@@ -95,7 +97,7 @@
                     <!-- Prices Form -->
 
                     <div class="prices-container">
-                        <div class="option-price">
+                        <div id="price-1" class="option-price" value="49.97">
                             <i class="fa-regular fa-circle"></i>
                             <i class="fa-sharp fa-solid fa-circle-check"></i>
                             <p class="description">50% OFF: 1 Sutera™ Pillow<br>
@@ -106,7 +108,7 @@
                             </p>
                         </div>
 
-                        <div class="option-price">
+                        <div id="price-2" class="option-price" value="46.97">
                             <i class="fa-regular fa-circle"></i>
                             <i class="fa-sharp fa-solid fa-circle-check"></i>
                             <p class="description">53% OFF: 2 Sutera™ Pillows<br>
@@ -117,7 +119,7 @@
                             </p>
                         </div>
 
-                        <div class="option-price" style="background-color: #ffc500;">
+                        <div id="price-3" class="option-price" style="background-color: #ffc500;" value="44.97">
                             <i class="fa-regular fa-circle"></i>
                             <i class="fa-sharp fa-solid fa-circle-check"></i>
                             <p class="description"><strong>BEST SELLER</strong> 55% OFF: 3 Sutera™ Pillows<br>
@@ -130,7 +132,7 @@
                             </p>
                         </div>
 
-                        <div class="option-price">
+                        <div id="price-4" class="option-price" value="42.97">
                             <i class="fa-regular fa-circle"></i>
                             <i class="fa-sharp fa-solid fa-circle-check"></i>
                             <p class="description">57% OFF: 4 Sutera™ Pillows<br>
@@ -141,10 +143,10 @@
                             </p>
                         </div>
 
-                        <div class="option-price">
+                        <div id="price-5" class="option-price" value="39.97">
                             <i class="fa-regular fa-circle"></i>
                             <i class="fa-sharp fa-solid fa-circle-check"></i>
-                            <p class="description">60% OFF: 4 Sutera™ Pillows<br>
+                            <p class="description">60% OFF: 5 Sutera™ Pillows<br>
                                 (Normally $500)
                             </p>
                             <p>$39.97 Each Including<br>
@@ -214,7 +216,7 @@
                         <div class="phone-selection">
                             <select id="country_code" name="country_code">
                             </select>
-                            <input type="tel" id="phone" name="phone" required placeholder="Telephone">
+                            <input type="number" id="phone" name="phone" required placeholder="Telephone">
                         </div>
                     </form>
                     <div class="separator"></div>
@@ -455,17 +457,88 @@
                                 </p><br><br>
                             </div>
                         </div>
-                        <p><strong>One Time Offer:</strong> By placing your order today you can have 2 years of protection and replacement
+                        <p><strong>One Time Offer:</strong> By placing your order today you can have 2 years of
+                            protection and replacement
                             warranty for only an additional $19.97. This extended warranty means your product is
                             covered for 2 years.</p>
                     </div>
+                    <input type="text" id="cupon" name="cupon-code" required placeholder="Cupon Code">
+                    <div class="final-prices">
+                        <div class="off">
+                            <div id="details">
+                                <h3>55% OFF: 3 Sutera™ Pillows</h3>
+                            </div>
+                            <div id="price-detail">
+                                <h3>$134.91</h3>
+                            </div>
+                        </div>
+                        <div class="warranty-text">
+                            <p>Sutera 2 Year Warranty</p>
+                            <div id="warranty">
+                                <h2>$19.97</h2>
+                            </div>
+                        </div>
+                        <div class="shipping-text">
+                            <p>Shipping</p>
+                            <div id="shipping-cost">
+                                <h2>FREE</h2>
+                            </div>
+                        </div>
+                        <div class="total-tax">
+                            <p><strong>Total:</strong> (Before Taxes)</p>
+                            <div id="final-price">
+                                <h2>$134.91</h2>
+                            </div>
+                        </div>
+                        <div class="total-protection">
+                            <p><strong>Total:</strong> (Before Taxes)</p>
+                            <div id="price-protection">
+                                <h2>$134.91</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="privacy-options">
+                        <div id="check-privacy" class="option-privacy">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <i class="fa-regular fa-circle"></i>
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            <p class="option"><strong>I agree to the website's <a
+                                        href="https://sleepdreamdeep.com/policies/terms-of-service"
+                                        target="_blank">Terms of Use</a> and <a
+                                        href="https://sleepdreamdeep.com/policies/privacy-policy"
+                                        target="_blank">Privacy Policy</a>.</strong>
+                            </p><br><br>
+                        </div>
+                    </div>
+                    <input id="submit-btn" type="submit" value="YES! Send me my Sutera™!">
+                    <div class="images">
+                        <div class="mcafee">
+                            <img src="assets/img/order-sumary.png" alt="">
+                            <div class="ssl">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>Secure 256-bit SSL encryption</p>
+                            </div>
+                            <div class="guarantee">
+                                <img src="assets/img/satisfaction-guarantee.png" alt="">
+                                <p>We have a 30 day satisfaction guarantee, we want our customers happy! Please refer to
+                                    our return policy at the bottom of the page for more details. Happy Shopping!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-
-
         </div>
     </div>
-    <input type="submit" value="Enviar">
+
+    <section id="FAQ">
+        <div class="main-container">
+            <div class="header">
+                <h2><strong>FREQUENTLY ASKED QUESTIONS</strong></h2>
+            </div>
+            <div class="separator"></div>
+        </div>
+    </section>
 
 
     <!-- Template Main JS File -->

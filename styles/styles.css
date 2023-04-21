@@ -804,7 +804,9 @@ select {
     display: block;
 }
 
-.option-protection .fa-arrow-right {
+/* Arrow Effect */
+
+.fa-arrow-right {
     font-size: 20px;
     color: #c91f3f;
     animation: moveRight 2s linear infinite;
@@ -842,3 +844,141 @@ select {
     animation-direction: reverse;
 }
 
+.main-container input {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+}
+
+/* Prices */
+
+.final-prices {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.final-prices .off {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total-tax {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total-protection {
+    display: none;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.shipping-text {
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.warranty-text {
+    display: none;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.option-privacy {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 20px;
+}
+
+.privacy-options p {
+    text-align: left;
+}
+
+.option-privacy .fa-circle-check {
+    display: none;
+}
+
+.option-privacy.selected .fa-circle {
+    display: none;
+}
+
+.option-privacy.selected .fa-circle-check {
+    display: block;
+}
+
+#submit-btn {
+    background-color: #19a92a;
+    cursor: pointer;
+    border: 0 solid;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#submit-btn:hover {
+    background-color: #159324;
+}
+
+/* Submit Section */
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.mcafee {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.mcafee img {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ssl {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.ssl i {
+    color: #ffbd03;
+}
+
+.guarantee {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.guarantee img {
+    width: 30%;
+}
