@@ -8,8 +8,6 @@ The Sutera-Clon project is an ongoing attempt to recreate the original Sutera we
 ## Getting Started
 To get started with this project, simply clone this repository to your local machine and open the index.html file in your preferred web browser. Please note that this is an unfinished project, so some features may not work as intended.
 
-Alternatively, you can visit the live demo of this project at https://jorgesarricolea.github.io/Sutera-Clon/. Again, please note that this is an unfinished project.
-
 ## Features
 Some of the key features of this project include:
 
