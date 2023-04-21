@@ -484,11 +484,13 @@ input[type="tel"]:focus {
 }
 
 select option {
-    background-color: red;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+
 }
 
 select {
-    width: 60px;
+    width: fit-content;
 }
 
 .phone-selection:focus-within {
@@ -571,4 +573,71 @@ select {
 
 .text .coment {
     margin-top: 10px;
+}
+
+/* Step 4 Section
+----------------- */
+
+#step-4 {
+    display: none;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 100%;
+}
+
+#step-4 .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#step-4 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#step-4.section-selected {
+    display: flex;
+}
+
+/* Register Address Form */
+
+#shipping-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#shipping-address input {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+}
+
+#shipping-address select {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+}
+
+#shipping-address select:focus {
+    outline: 2px solid #8cd895;
 }
