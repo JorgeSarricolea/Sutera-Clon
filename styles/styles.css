@@ -466,15 +466,6 @@ button {
     border: 2px solid transparent;
 }
 
-#country_code {
-    background-color: #fff;
-    width: 22%;
-    height: fit-content;
-    border-radius: 10px;
-    padding: 5px;
-    border-color: transparent;
-}
-
 input:focus {
     outline: 2px solid #8cd895;
 }
@@ -483,13 +474,12 @@ input[type="number"]:focus {
     outline: none;
 }
 
-select option {
+#user-register select {
+    display: flex;
     border-radius: 10px;
-}
-
-select {
-    width: fit-content;
-    color: #000;
+    max-width: 30%;
+    border-color: transparent;
+    border: 0;
 }
 
 .phone-selection:focus-within {
@@ -697,7 +687,7 @@ select {
     margin-left: 20px;
 }
 
-/* Register Address Form (Billing) */
+/* Register New Address Form (Billing) */
 
 #billing-form {
     display: none;
@@ -1068,6 +1058,10 @@ input {
 /* Results
 ----------------- */
 
+#results {
+    display: none;
+}
+
 #main-results {
     width: 40%;
     margin: 20px auto;
@@ -1081,6 +1075,18 @@ input {
     border: 2px solid #ccc;
 }
 
+.header p {
+    font-size: 28px;
+}
+
+#main-results h1 {
+    font-size: 20PX;
+}
+
+#main-results h2 {
+    font-size: 14PX;
+}
+
 .wrapper {
     display: flex;
     flex-direction: row;
@@ -1089,13 +1095,7 @@ input {
     align-items: center;
 }
 
-.wrapper:nth-of-type(5) {
-    max-width: 50%;
-}
-
-.names, .contact {
+.contact, .names {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
 }
