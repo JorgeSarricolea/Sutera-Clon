@@ -332,11 +332,11 @@
 
                         <input type="text" id="apartment-suite" name="apartment-suite" placeholder="Apartment Suite">
 
-                        <select id="country" name="country">
+                        <select id="country" name="country" class="country">
                         </select>
 
                         <div class="columns">
-                            <select id="state" name="state">
+                            <select id="state" name="state" class="state">
                             </select>
                             <input type="text" id="zip-code" name="zip-code" required placeholder="Zip Code">
                         </div>
@@ -371,12 +371,55 @@
                                 <option value="2030">2030</option>
                             </select>
                         </div>
-                        <button type="submit">Submit</button>
                     </form>
                 </div>
-            </section>
 
-            <!-- Step 5 Section -->
+                <!-- Step 5 Section -->
+
+                <section id="step-5">
+                    <div class="main-container">
+                        <div class="header">
+                            <h2><strong>STEP 5: BILLING ADDRESS</strong></h2>
+                        </div>
+                        <div class="separator"></div>
+
+                        <!-- Billing Options-->
+
+                        <div class="billing-options">
+                            <div id="old-address" class="option-billing">
+                                <i class="fa-regular fa-circle"></i>
+                                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                <p class="description">Same as shipping address.
+                                </p>
+                            </div>
+
+                            <div id="new-address" class="option-billing">
+                                <i class="fa-regular fa-circle"></i>
+                                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                <p class="description">Use a different billing address.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- New Billing Address -->
+
+                        <form id="billing-form">
+                            <input type="text" id="street-address" name="street-address" required placeholder="Street Address">
+
+                            <input type="text" id="apartment-suite" name="apartment-suite" placeholder="Apartment Suite">
+
+                            <select id="country-billing" name="country" class="country">
+                            </select>
+
+                            <div class="columns">
+                                <select id="state-billing" name="state" class="state">
+                                </select>
+                                <input type="text" id="zip-code" name="zip-code" required placeholder="Zip Code">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </section>
 
         </div>
     </div>

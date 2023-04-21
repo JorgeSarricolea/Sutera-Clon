@@ -183,6 +183,54 @@ for (let i = 0; i < statesMX.length; i++) {
     select.add(option);
 }
 
+// Functions for radio form (Billing)
+let optionsBilling = document.querySelectorAll('.billing-options .option-billing');
+let newAddress = document.getElementById('billing-form');
 
+// Select default option
+optionsBilling[0].classList.add('selected');
 
+// Add event click forEach
+optionsBilling.forEach(function (option) {
+    option.addEventListener('click', function () {
+        // Remove selected class from all options
+        optionsBilling.forEach(function (o) {
+            o.classList.remove('selected');
+        });
 
+        // Add selected class and checkmark to clicked option
+        this.classList.add('selected');
+
+        // If user selects "Use a different billing address"
+        if (this.id === 'new-address') {
+            // Show billing address form
+            newAddress.classList.add('section-selected');
+        } else {
+            newAddress.classList.remove('section-selected');
+        }
+    });
+});
+
+// Dropdown Countries - New Billing Address
+
+fetch(linkLada)
+    .then(response => response.json())
+    .then(countries => {
+        let select = document.getElementById('country-billing');
+        for (let country of countries) {
+            let option = document.createElement('option');
+            let name = country.name.common;
+            option.text = `${name}`;
+            select.add(option);
+        }
+    })
+    .catch(error => console.error(error));
+
+// Dropdown States - New Billing Address
+
+let selectState = document.getElementById('state-billing');
+for (let i = 0; i < statesMX.length; i++) {
+    let option = document.createElement('option');
+    option.text = statesMX[i];
+    selectState.add(option);
+}

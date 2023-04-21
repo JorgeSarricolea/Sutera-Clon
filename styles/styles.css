@@ -641,3 +641,103 @@ select {
 #shipping-address select:focus {
     outline: 2px solid #8cd895;
 }
+
+/* Step 5 Section
+----------------- */
+
+#step-5 {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 100%;
+}
+
+#step-5 .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#step-5 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.billing-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.billing-options .option-billing {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option-billing .fa-circle-check {
+    display: none;
+}
+
+.option-billing.selected .fa-circle {
+    display: none;
+}
+
+.option-billing.selected .fa-circle-check{
+    display: block;
+}
+
+#billing-form {
+    display: none;
+}
+
+#billing-form.section-selected {
+    display: flex;
+}
+
+.billing-options .option-billing .description {
+    margin-left: 20px;
+}
+
+
+/* Register Address Form (Billing) */
+
+#billing-form {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#billing-form input {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+}
+
+#billing-form select {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+}
+
+#billing-form select:focus {
+    outline: 2px solid #8cd895;
+}
