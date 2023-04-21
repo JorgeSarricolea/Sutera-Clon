@@ -982,3 +982,86 @@ select {
 .guarantee img {
     width: 30%;
 }
+
+/* FAQ
+----------------- */
+
+#FAQ {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 80%;
+    text-align: center;
+}
+
+#FAQ .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#FAQ.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.ask h2 {
+    padding: 15px;
+    background-color: #323232;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.ask p {
+    padding: 20px 40px 40px;
+    text-align: left;
+
+}
+
+/* Footer
+----------------- */
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#footer h1 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #9d9fa2;
+}
+
+#footer a {
+    color: #9d9fa2;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* input Error
+----------------- */
+
+input {
+    border: 2px solid #c91f3f;
+}

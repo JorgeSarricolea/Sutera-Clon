@@ -53,7 +53,12 @@ for (const thumbnail of thumbnails) {
     thumbnail.addEventListener('click', selectImageByThumbnail);
 }
 
-
+// Focus on error inputs
+let error = '2px solid #c91f3f';
+const step2 = document.getElementById('step-3');
+const step4 = document.getElementById('step-4');
+const step5 = document.getElementById('step-5');
+const errorMsg = 'This Field Is Required';
 
 // Functions for radio form (Prices)
 const options = document.querySelectorAll('.prices-container .option-price');
@@ -175,9 +180,15 @@ optionsPayment.forEach(function (optionPayment) {
                 if (!streetAddressInput.value || !apartmentSuiteInput.value || !countryInput.value || !stateInput.value ||
                     !zipCodeInput.value || !creditCardNumberInput.value || !securityCodeInput.value || !cardMonthInput.value || 
                     !cardYearInput.value) {
-                    console.log('Inputs vacios (Credit card)');
+                    streetAddressInput.style.border = error;
+                    apartmentSuiteInput.style.border = error;
+                    countryInput.style.border = error;
+                    zipCodeInput.style.border = error;
+                    creditCardNumberInput.style.border = error;
+                    securityCodeInput.style.border = error;
+                    cardYearInput.style.border = error;
+                    step4.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    console.log('All required input fields have values');
                     shippingAddress_Form.submit(); // submit the form
                 }
             });
@@ -308,10 +319,17 @@ optionsBilling.forEach(function (option) {
 
                 // Check if required fields have a value
                 if (!nameInput.value || !lastNameInput.value || !streetAddressInput.value ||
-                    !countryInput.value || !stateInput.value || !zipCodeInput.value) {
-                    console.log('inputs vacios (New billing)');
+                    !apartmentSuiteInput.value || !countryInput.value || !stateInput.value ||
+                    !zipCodeInput.value) {
+                    nameInput.style.border = error;
+                    lastNameInput.style.border = error;
+                    streetAddressInput.style.border = error;
+                    apartmentSuiteInput.style.border = error;
+                    countryInput.style.border = error;
+                    stateInput.style.border = error;
+                    zipCodeInput.style.border = error;
+                    step5.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    console.log('All required input fields have values');
                     newBilling_Form.submit(); // submit the form
                 }
             });
@@ -362,7 +380,6 @@ optionProtection.forEach(function (option) {
         const totalProtection = document.querySelector('.total-protection');
         const normalPrice = document.querySelector('.total-tax');
         const warranty = document.querySelector('.warranty-text');
-        const shipping = document.querySelector('shipping-text');
 
         if (!isSelected) {
             this.classList.add('selected');
@@ -398,9 +415,9 @@ optionPrivacy.forEach(function (option) {
     });
 });
 
-// Submit Functions and check inputs fields
-
+// Submit button
 const submitBtn = document.getElementById('submit-btn');
+
 // user-register From
 const userRegister_Form = document.getElementById('user-register');
 
@@ -413,11 +430,12 @@ submitBtn.addEventListener('click', function (event) {
     const phoneInput = document.getElementById('phone');
 
     if (!nameInput.value || !lastNameInput.value || !emailInput.value || !phoneInput.value) {
-        console.log('Inputs vacios (user register)');
+        nameInput.style.border = error;
+        lastNameInput.style.border = error;
+        emailInput.style.border = error;
+        phoneInput.style.border = error;
+        step2.scrollIntoView({ behavior: 'smooth' });
     } else {
-        console.log('All input fields have values');
         userRegister_Form.submit(); // submit the form
     }
 });
-
-
