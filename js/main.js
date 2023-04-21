@@ -95,6 +95,9 @@ optionsPayment.forEach(function (optionPayment) {
         if (this.id === 'credit-cards') {
             // Show credit card form
             creditCard_section.classList.add('section-selected');
+            //Change the tittle Step of the last one (Step 4 to Step 6)
+            let newTittle = document.querySelector('#step-6 h2');
+            newTittle.textContent = 'STEP 6: ORDER SUMMARY';
         } else {
             creditCard_section.classList.remove('section-selected');
         }
@@ -138,7 +141,7 @@ fetch(linkLada)
 // Dropdown States - Shipping Address
 
 /* I decided to declare an array with the states of Mexico,
-I was researching and I did not find a free API that would allow
+I was researching and I did't find a free API that would allow
 me to obtain the states of each country in json format */
 
 const statesMX = [
@@ -234,3 +237,28 @@ for (let i = 0; i < statesMX.length; i++) {
     option.text = statesMX[i];
     selectState.add(option);
 }
+
+
+// Functions for radio check Protection
+let optionProtection = document.querySelectorAll('.protecion-options .option-protection');
+
+// Select default option
+optionProtection[0].classList.add('selected');
+
+// Add event click forEach
+optionProtection.forEach(function (option) {
+    option.addEventListener('click', function () {
+        // Check if clicked option is already selected
+        const isSelected = this.classList.contains('selected');
+
+        // Remove selected class from all options
+        optionProtection.forEach(function (o) {
+            o.classList.remove('selected');
+        });
+
+        // Add selected class and checkmark to clicked option if it was not already selected
+        if (!isSelected) {
+            this.classList.add('selected');
+        }
+    });
+});
