@@ -60,6 +60,9 @@ const step4 = document.getElementById('step-4');
 const step5 = document.getElementById('step-5');
 const errorMsg = 'This Field Is Required';
 
+// Results
+const optionSelected = document.getElementById('step-3')
+
 // Functions for radio form (Prices)
 const options = document.querySelectorAll('.prices-container .option-price');
 
@@ -88,7 +91,6 @@ options.forEach(function (option) {
         let protection = 19.97;
         let priceProtection = 0;
         let shipping = 0;
-        let price = 0;
         let detail;
         if (this.id === 'price-1') {
             selectedPrice = price1 + 9.45;
@@ -120,9 +122,17 @@ options.forEach(function (option) {
         // Update final price element
         let finalPrice = document.querySelector('#final-price h2');
         let detailsSelected = document.querySelector('#details h3');
-        let priceDetail = document.querySelector('#price-detail h3')
+        let priceDetail = document.querySelector('#price-detail h3');
         let protectionSelect = document.querySelector('#price-protection h2');
-        let shippingPrice = document.querySelector('#shipping-cost h2')
+        let shippingPrice = document.querySelector('#shipping-cost h2');
+
+        // Result
+        let details = document.querySelector('#main-results .details');
+        let price = document.querySelector('#main-results .price');
+        let shippingCost = document.querySelector('#main-results .shipping');
+        price.textContent = '$' + selectedPrice;
+        details.textContent = detail;
+        shippingCost.textContent = shipping;
 
         finalPrice.textContent = '$' + selectedPrice.toFixed(2);
         detailsSelected.textContent = detail;
@@ -157,6 +167,8 @@ optionsPayment.forEach(function (optionPayment) {
             //Change the tittle Step of the last one (Step 4 to Step 6)
             let newTittle = document.querySelector('#step-6 h2');
             newTittle.textContent = 'STEP 6: ORDER SUMMARY';
+            let paymentCard =  document.querySelector('.wrapper .payment-method-ticket')
+            paymentCard.textContent = 'Credit Card';
 
             // shipping-address Form
 
@@ -194,6 +206,8 @@ optionsPayment.forEach(function (optionPayment) {
             });
         } else {
             creditCard_section.classList.remove('section-selected');
+            let paymentPaypal =  document.querySelector('.wrapper .payment-method-ticket')
+            paymentPaypal.textContent = 'Paypal';
         }
     });
 });
@@ -340,7 +354,6 @@ optionsBilling.forEach(function (option) {
 });
 
 // Dropdown Countries - New Billing Address
-
 fetch(linkLada)
     .then(response => response.json())
     .then(countries => {
@@ -355,7 +368,6 @@ fetch(linkLada)
     .catch(error => console.error(error));
 
 // Dropdown States - New Billing Address
-
 let selectState = document.getElementById('state-billing');
 for (let i = 0; i < statesMX.length; i++) {
     let option = document.createElement('option');
@@ -436,6 +448,21 @@ submitBtn.addEventListener('click', function (event) {
         phoneInput.style.border = error;
         step2.scrollIntoView({ behavior: 'smooth' });
     } else {
-        userRegister_Form.submit(); // submit the form
+        this.addEventListener('submit', function(event) {
+            event.preventDefault();
+        });
+
+        // Show the results int Ticket
+        let tiketName =  document.querySelector('.wrapper .input-name');
+        let tiketLastName =  document.querySelector('.wrapper .input-lastname');
+        let tiketEmail =  document.querySelector('.wrapper .input-email');
+        let tiketNumber =  document.querySelector('.wrapper .input-number');
+
+
+        tiketName.textContent = nameInput.value;
+        tiketLastName.textContent =lastNameInput.value;
+        tiketEmail.textContent = emailInput.value;
+        tiketNumber.textContent = phoneInput.value;
     }
 });
+
