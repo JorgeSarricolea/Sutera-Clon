@@ -20,6 +20,4 @@ Some of the key features of this project include:
 While contributions to this project are welcome, please note that it is currently unfinished and not actively maintained. If you would like to contribute, feel free to fork this repository and submit a pull request, but please understand that there may be limited support available.
 
 ## Credits
-This project was created by [Jorge Sarricolea](https://jorgesarricolea.com), for a technical test, with inspiration from the original Sutera website.
-
-I hope this revised version helps communicate the unfinished state of the project. If you have any further questions or concerns, please let me know!
+This project was created by [Jorge Sarricolea](https://jorgesarricolea.com), for a technical test, with inspiration from the original Sutera website. I hope this revised version helps communicate the unfinished state of the project. If you have any further questions or concerns, please let me know!
